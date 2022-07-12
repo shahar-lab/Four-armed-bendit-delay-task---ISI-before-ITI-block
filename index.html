@@ -113,8 +113,8 @@
                 "Some of the flowers will be able to grow and some will not be able to.<br> " +
                 "For every flower that grows, you will get a coin (+1). for every flower that does not grow, you do not get a coin.<p>" +
                 "<p style='text-align:left'>Some flowers are better than others - their probability to grow is higher. You need to find out which ones are better and choose them.<br> " +
-                "Your goal is to collect as many coins as you can.</p> "
-                 + "Your goal is to collect as many coins as you can, and your bonus will be calculated accordingly.</p> "
+                "Your goal is to collect as many coins as you can.</p> "+ 
+                "<p style='text-align:left'> Your goal is to collect as many coins as you can, and your bonus will be calculated accordingly.</p> "
                 +
                 "<br> <img class='cute_gardener' src='images/cute_gardener.jpg'>",
 
@@ -930,9 +930,9 @@
         };
 
         var full_procedure_cards = {
-            timeline: [instructions_loop, instructions_demo,instructions_demo_iti,start_exp_cards, blocks_iti_1],
+            // timeline: [instructions_loop, instructions_demo,instructions_demo_iti,start_exp_cards, blocks_iti_1],
             //timeline: [instructions_loop, instructions_demo,instructions_demo_iti,start_exp_cards, blocks_iti_2],
-            // timeline: [blocks_iti_1],
+            timeline: [instructions_demo_iti],
             repetitions: 1
         };
 
@@ -979,7 +979,7 @@
             show_preload_progress_bar: true,
             on_finish: function () {
                         var data = jsPsych.data.get();
-                        data.localSave('json','flowers.json');
+                        // data.localSave('json','flowers.json');
                         //data.localSave(data.json());
                         // data.localSave('csv','flowers.csv');
                         //jsPsych.data.displayData();
