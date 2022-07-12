@@ -681,17 +681,18 @@
         var start_exp_cards = {
             on_start: function() {$('body').css('cursor', 'none')},
             type: 'html-keyboard-response',
-            stimulus: '<div> .עבודה טובה! שלב האימון הסתיים <br> <br> !כעת נעבור למשחק האמיתי. עשה כמיטב יכולתך על מנת להבין אילו פרחים טובים יותר מאחרים. בהצלחה<br><br> <b>לחץ על מקש כלשהו על מנת להמשיך</b></div>',
+            stimulus: '<div>Good job! Practice completed. <br> <br> We will now move on to the real game. Do your best to remember the flowers to figure out which ones are better. Good luck!<br><br> <b>Press any key to continue.</b></div>',
             post_trial_gap: 1000
         }
 
         var start_block = {
             type: 'html-keyboard-response',
             stimulus: function () {
-                return '<p><b><u>בלוק מספר ' + (block + 1) + ' מתוך ' + (blocks + 1) + '</u></b></p>' + '<p style="text-align: right"> .אתה תתחיל כעת בלוק חדש. להלן ארבעת הפרחים שיכולים להופיע בבלוק זה</p>'
-                    + '<p style="text-align: right"> .(בהתאמה s או k) השתמש במקש הימני או השמאלי על מנת לבצע את הבחירה שלך <br>!בצע כמיטב יכולת על מנת לזכות בכמה שיותר מטבעות<br> </p>'
-                    + '<p style="text-align: right">.זכור שרק הפרחים עצמם משפיעים על הזכייה במטבעות (ולא המקשים על המקלדת או זמן ההמתנה) </p>'
-                    + '<p><b>לחץ על מקש הרווח כדי להתחיל</b></p>'
+                return '<p><b><u>Test block ' + (block + 1) + ' out of' + (blocks + 1) + '</u></b></p>' +                     
+                    '<p style="text-align: left"> You will now start a test block. Below are the four flowers that can appear in this round.</p>' +
+                    '<p style="text-align: left">Use the LEFT or RIGHT response keys (‘s’ or ‘k’, in correspondence) to make your selection. <br> Please do your best to win as many coins as possible!<br> </p>' +
+                    '<p style="text-align: left">Remember that Only the flowers (not the response key that was used to select them or the delay between the choice and the reward) predict an outcome. </p>' +
+                    '<p><b>Press SPACE to start</b></p>' +
                     + '<img src="' + images_for_block_start()[0] + '">  ' + '<img src="' + images_for_block_start()[1] + '">    ' + '<img src="' + images_for_block_start()[2]
                     + '">    ' + '<img src="' + images_for_block_start()[3] + '">  '
             },
@@ -816,19 +817,20 @@
         var finish_block = {
             type: 'html-keyboard-response',
             stimulus: function () {
-                finish_block_string = '<p>!כל הכבוד</p>' 
-                + '<p style="text-align: left"> <br> . בלוק מספר' +' '+ (block + 1) + ' מתוך ' + (blocks + 1) + ' הסתיים ' +'.'
+                finish_block_string = '<p>Good job!</p>' + '<p style="text-align: left"><br> Test block ' + (
+                    block + 1) + ' out of ' + (blocks + 1) + ' is over.'
                 if (block != '7') {
-                    finish_block_string += 'אתה יכול להתמתח קצת ולקחת הפסקה קצרה בזמן שאתה יושב בכיסא</p><p> <br><br><br><b>לחץ על מקש הרווח על מנת להמשיך</b>  </p>'
+                    finish_block_string +=
+                        ' You can stretch a little and take a short break while sitting in front of the screen, if needed.</p><p> <br><br><br><b>Press SPACE to continue</b>  </p>'
                     number_of_coins = ' '
-                    //bonus = ' '
+
                 }
                 else {
                     number_of_reward1 = jsPsych.data.get().filter({ phase: 'exp', trial_name: 'reward1' }).select('reward').sum()
-                    number_of_coins = 'אספת' +' '+ number_of_reward1 +' ' + 'מטבעות'
+                    number_of_coins = 'You collected' +' '+ number_of_reward1 +' ' + 'coins'
 
-                    finish_block_string += 'כעת נמשיך למענה על מספר שאלות</p><p> <br><br><br><b>אנא קרא לנסיין</b>  </p>'
-
+                    finish_block_string +=
+                        '.</p><p> <br><br><br><b>Press SPACE to continue</b>  </p>'
                     // if (number_of_reward1 > 100){
                     //     // bonus = '<p> <br><br><br><b>הבונוס שלך הוא 5 שקלים</b>  </p>'
                     //  }
@@ -958,8 +960,8 @@
         timeline.push({
                 type: 'fullscreen',
                 fullscreen_mode: true,
-                message: '<p style="text-align: center">לאחר לחיצת על המקש מטה תעבור לתצוגת מסך מלא</p>',
-                button_label: 'המשך לתצוגת מסך מלא'
+                message: '<p style="text-align: center"> After pressing the button you will switch to full screen mode</p>',
+                button_label: 'Continue to full screen mode'
             });
         // var full_procedure_cards = procedure_cards();
         timeline.push(full_procedure_cards);
