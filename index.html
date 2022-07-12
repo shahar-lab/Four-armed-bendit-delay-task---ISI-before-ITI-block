@@ -131,18 +131,18 @@
                 "As shown below is an example for selecting the left flower (pressed “S” on the keyboard).<p>" +
                 "<br> <img class='selection_example' src='images/flowers set 1_example/selection_example.png''>",
 
+                "<p style='text-align:left'>After selecting  a flower, you will see an outcome in the middle of the screen, as shown below (winnig +1 coin).<br>" +
+                "<b>Winning very much depends on the flower you chose. Some flowers are better than others in their set.</b><br>" +
+                "Your task is to find out which flower is the best in each set at any time and choose it.</p>" +
+                "<br> <img class='example' src='images/flowers set 1_example/reward_example.png'>",
 
-                "<p style='text-align:left'> After you saw your selection, it will disappear from the screen. You need to wait a few seconds to see if the flower grows or not. <br>" +
+
+                "<p style='text-align:left'> During the game, an hourglass will occasionally appear on the screen. The hourglass will appear for a few seconds and then will disappear. <br>" +
+                "While the hourglass is on you need to wait.<br>" +
                 "Waiting time can change on each step, and it will <b> range randomly </b> between 0-8 seconds.<br>" +
                 "While you are waiting, you <b> MUST STAY FOCUSED </b> with your gaze and attention on the hourglass on the center of the screen. <br>" +
                 "<p><b>Notice:</b> It is very important for the experiment that you keep your eyes focused on the center of the screen and do not do anything else while waiting.</p>" +
                 "<br> <img class='Hourglass' src='images/hourglass.png''> ",
-
-
-                "<p style='text-align:left'>After waiting a few seconds, you will see an outcome in the middle of the screen, as shown below (winnig +1 coin).<br>" +
-                "<b>Winning very much depends on the flower you chose. Some flowers are better than others in their set.</b><br>" +
-                "Your task is to find out which flower is the best in each set at any time and choose it.</p>" +
-                "<br> <img class='example' src='images/flowers set 1_example/reward_example.png'>",
 
 
                 "<p style='text-align:left'><u>Three important things to remember:</u><br>" +
@@ -223,7 +223,7 @@
                     required: true
                 },
                 {
-                    prompt: "While waiting until the outcome will appear you have to stay focused on the hourglass",
+                    prompt: "While waiting time you have to stay focused on the hourglass",
                     name: 'focused',
                     correct: 'True',
                     options: Q4_5_6_7_options,
@@ -688,12 +688,12 @@
         var start_block = {
             type: 'html-keyboard-response',
             stimulus: function () {
-                return '<p><b><u>Test block ' + (block + 1) + ' out of' + (blocks + 1) + '</u></b></p>' +                     
+                return '<p><b><u>Test block ' + (block + 1) + ' out of ' + (blocks + 1) + '</u></b></p>' +                     
                     '<p style="text-align: left"> You will now start a test block. Below are the four flowers that can appear in this round.</p>' +
                     '<p style="text-align: left">Use the LEFT or RIGHT response keys (‘s’ or ‘k’, in correspondence) to make your selection. <br> Please do your best to win as many coins as possible!<br> </p>' +
-                    '<p style="text-align: left">Remember that Only the flowers (not the response key that was used to select them or the delay between the choice and the reward) predict an outcome. </p>' +
+                    '<p style="text-align: left">Remember that Only the flowers (not the response key that was used to select them or the waiting time) predict an outcome. </p>' +
                     '<p><b>Press SPACE to start</b></p>' +
-                    + '<img src="' + images_for_block_start()[0] + '">  ' + '<img src="' + images_for_block_start()[1] + '">    ' + '<img src="' + images_for_block_start()[2]
+                    '<img src="' + images_for_block_start()[0] + '">  ' + '<img src="' + images_for_block_start()[1] + '">    ' + '<img src="' + images_for_block_start()[2]
                     + '">    ' + '<img src="' + images_for_block_start()[3] + '">  '
             },
             choices: [32]
@@ -831,16 +831,10 @@
 
                     finish_block_string +=
                         '.</p><p> <br><br><br><b>Press SPACE to continue</b>  </p>'
-                    // if (number_of_reward1 > 100){
-                    //     // bonus = '<p> <br><br><br><b>הבונוס שלך הוא 5 שקלים</b>  </p>'
-                    //  }
-                    // else {
-                    //     bonus = ' '
-                    // }
                     
                  }
                  return number_of_coins + finish_block_string 
-                // return finish_block_string + bonus + number_of_coins
+
             },
             post_trial_gap: 1000,
             choices: [32],
@@ -856,7 +850,7 @@
 
         var demo_procedure_only_cards = {
             timeline: [fixation_cards, practice_cards, practice_choice,practice_delay,practice_reward],
-            repetitions: 6
+             repetitions: 6
         }
 
         var demo_procedure_only_cards_iti = {
@@ -898,15 +892,15 @@
 
         var test_procedure_cards = {
             timeline: [fixation_cards, exp_cards, exp_choice, exp_delay,exp_reward],
-            // repetitions: 25
-            repetitions: 1
+            repetitions: 25
+
         }
 
 
         var test_procedure_cards_iti = {
             timeline: [fixation_cards, exp_cards, exp_choice, exp_reward_iti, exp_delay],
-            // repetitions: 25
-            repetitions: 1
+            repetitions: 25
+
         }
 
         var test_blocks = {
@@ -931,10 +925,11 @@
             repetitions: 4
         };
 
+
         var full_procedure_cards = {
             timeline: [instructions_loop, instructions_demo,instructions_demo_iti,start_exp_cards, blocks_iti_1],
             //timeline: [instructions_loop, instructions_demo,instructions_demo_iti,start_exp_cards, blocks_iti_2],
-            // timeline: [instructions_demo_iti],
+            // timeline: [start_exp_cards, blocks_iti_1],
             repetitions: 1
         };
 
@@ -977,7 +972,7 @@
               ------------------------------------------------------*/
         jsPsych.init({
             timeline: timeline,
-            preload_images: practice_deck_images, test_deck_images, reward_images, practice_deck_images_iti, reward_images, Hourglass, garden, cute_gardener, 
+            preload_images: practice_deck_images, test_deck_images, reward_images, practice_deck_images_iti, reward_images, Hourglass, garden, cute_gardener, practice_deck_images_iti, set2,set3,set4,set5,set6,set7,set8,set9,
             show_preload_progress_bar: true,
             on_finish: function () {
                         var data = jsPsych.data.get();
@@ -988,6 +983,8 @@
                         /*get data */
                         processed_data = data.json()
                         window.parent.postMessage({ id: 'embeddedDataId', answer: processed_data }, '*');	
+
+
 
 
                             // $.ajax({
