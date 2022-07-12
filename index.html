@@ -82,12 +82,12 @@
         /*---------------------------------------------------- 
         Start instructions
         ------------------------------------------------------*/
-        var subject_num = {
-            type: 'survey-text',
-            questions: [
-                {prompt: "אנא הכנס מספר נבדק", name: 'subject_num'}, 
-                ]
-            };
+        // var subject_num = {
+        //     type: 'survey-text',
+        //     questions: [
+        //         {prompt: "אנא הכנס מספר נבדק", name: 'subject_num'}, 
+        //         ]
+        //     };
         
         
         var instructions_cards = {
@@ -624,7 +624,7 @@
                 data. prob_flower2 = FB_matrix[2][current_cards_practice_trial];
                 data. prob_flower3 = FB_matrix[3][current_cards_practice_trial];
                 data. prob_flower4 = FB_matrix[4][current_cards_practice_trial];
-                data.subject_num = subject_num;
+                // data.subject_num = subject_num;
                 data.left_image= left_card[29];
                 data.right_image= right_card[29];
                 data.flower_set= 1; 
@@ -660,7 +660,7 @@
                 data. prob_flower2 = FB_matrix[2][current_cards_practice_trial];
                 data. prob_flower3 = FB_matrix[3][current_cards_practice_trial];
                 data. prob_flower4 = FB_matrix[4][current_cards_practice_trial];
-                data.subject_num = subject_num;
+                // data.subject_num = subject_num;
                 data.left_image= left_card[29];
                 data.right_image= right_card[29];
                 data.flower_set= 1; 
@@ -770,7 +770,7 @@
                 data. prob_flower2 = FB_matrix[2][current_cards_practice_trial];
                 data. prob_flower3 = FB_matrix[3][current_cards_practice_trial];
                 data. prob_flower4 = FB_matrix[4][current_cards_practice_trial];
-                data.subject_num = subject_num;
+                // data.subject_num = subject_num;
                 data.left_image= left_card[21];
                 data.right_image= right_card[21];
                 data.flower_set= images[0][19]; 
@@ -804,7 +804,7 @@
                 data. prob_flower2 = FB_matrix[2][current_cards_practice_trial];
                 data. prob_flower3 = FB_matrix[3][current_cards_practice_trial];
                 data. prob_flower4 = FB_matrix[4][current_cards_practice_trial];
-                data.subject_num = subject_num;
+                // data.subject_num = subject_num;
                 data.left_image= left_card[21];
                 data.right_image= right_card[21];
                 data.flower_set= images[0][19]; 
@@ -930,8 +930,8 @@
         };
 
         var full_procedure_cards = {
-            timeline: [subject_num,instructions_loop, instructions_demo,instructions_demo_iti,start_exp_cards, blocks_iti_1],
-            //timeline: [subject_num,instructions_loop, instructions_demo,instructions_demo_iti,start_exp_cards, blocks_iti_2],
+            timeline: [instructions_loop, instructions_demo,instructions_demo_iti,start_exp_cards, blocks_iti_1],
+            //timeline: [instructions_loop, instructions_demo,instructions_demo_iti,start_exp_cards, blocks_iti_2],
             // timeline: [blocks_iti_1],
             repetitions: 1
         };
@@ -941,11 +941,11 @@
     // var procedure_cards = function() {
     //     var i=jsPsych.randomization.sampleWithReplacement([1,2], 1);
     //     if (i<2) {
-    //         var full_procedure_cards = {timeline: [subject_num,instructions_loop, instructions_demo,start_exp_cards, blocks_iti_1]}
+    //         var full_procedure_cards = {timeline: [instructions_loop, instructions_demo,start_exp_cards, blocks_iti_1]}
     //     }
          
     //     else {
-    //         var full_procedure_cards = {timeline: [subject_num,instructions_loop, instructions_demo_iti,start_exp_cards, blocks_iti_2]}
+    //         var full_procedure_cards = {timeline: [instructions_loop, instructions_demo_iti,start_exp_cards, blocks_iti_2]}
     //     }
 
     //     return full_procedure_cards
@@ -953,7 +953,7 @@
     //         };
 
               
-    //timeline: [subject_num,instructions_loop, instructions_demo_iti,start_exp_cards, blocks_iti_2]
+    //timeline: [instructions_loop, instructions_demo_iti,start_exp_cards, blocks_iti_2]
         //instructions+test takes 180sec 
         
         
