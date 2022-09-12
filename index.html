@@ -99,7 +99,7 @@
             type: "instructions",
             pages: ["<p><b>Welcome to the garden game</b></p>"
                  + "<p style='text-align:left'>Your winnings will earn you an additional payment bonus for the study."
-                 + " If no extra money will be earned in the garden game, you will still get your paymet for completing the study."
+                 + " If no extra money will be earned in the garden game, you will still get your payment for completing the study."
                  + " However, <b>you can gain up to an extra £1 based on winnings in the game.</b></p>"
                 +
                 "<br> <img class='garden' src='images/garden.png'>",
@@ -108,10 +108,10 @@
                 "You can freely go back and forth between the screens.</p> " +
                 "<p style='text-align:left'>At the end of the instructions, <b>we will ask you to complete a short test about them</b>, to make sure everything is well understood.</p>",
 
-                "<p style='text-align:left'> In this game, you are the gardner and your goal is to grow as many flowers as you can. <p>" +
-                "<p style='text-align:left'> Every session, you choose a flower and after you choose it, you need to wait and see if it grows.<br> " +
+                "<p style='text-align:left'> In this game, you are the gardener and your goal is to grow as many flowers as you can. <p>" +
+                "<p style='text-align:left'> Every session, you choose a flower; after you choose it, you need to wait and see if it grows.<br> " +
                 "Some of the flowers will be able to grow and some will not be able to.<br> " +
-                "For every flower that grows, you will get a coin (+1). for every flower that does not grow, you do not get a coin.<p>" +
+                "For every flower that grows, you will get a coin (+1). You do not get a coin for every flower that does not grow.<p>" +
                 "<p style='text-align:left'>Some flowers are better than others - their probability to grow is higher. You need to find out which ones are better and choose them.<br> " +
                 "Your goal is to collect as many coins as you can.</p> "+ 
                 "<p style='text-align:left'> Your goal is to collect as many coins as you can, and your bonus will be calculated accordingly.</p> "
@@ -123,15 +123,15 @@
                 "<img class='group' src='images/flowers set 1_example/group.png' >",
 
                 "<p> On each step, only two flowers of the 4 possible flowers will be presented (as shown in the example below).<br>Every time you will have to choose one of the two flowers.<br>You will be able to select the left flower by pressing <b>'s'</b> and the right flower by pressing <b>'k'</b> on your keyboard." +
-                " <br><br><u>Please do your best to respond as fast and accurate as you can.</u><br><br>" +
+                " <br><br><u>Please do your best to respond as fast and accurately as you can.</u><br><br>" +
                 "<img class='example' src='images/flowers set 1_example/example.png' >" +
                 "<p> <img class='keyboard' src='images/keyboard.png' ><p>",
 
-                "<p style='text-align:left'> After selecting  a flower, you will see on the screen your selection.<br>" +
+                "<p style='text-align:left'> After selecting a flower, you will see on the screen your selection.<br>" +
                 "As shown below is an example for selecting the left flower (pressed “S” on the keyboard).<p>" +
                 "<br> <img class='selection_example' src='images/flowers set 1_example/selection_example.png''>",
 
-                "<p style='text-align:left'>After selecting  a flower, you will see an outcome in the middle of the screen, as shown below (winnig +1 coin).<br>" +
+                "<p style='text-align:left'>After selecting a flower, you will see an outcome in the middle of the screen, as shown below (winnig +1 coin).<br>" +
                 "<b>Winning very much depends on the flower you chose. Some flowers are better than others in their set.</b><br>" +
                 "Your task is to find out which flower is the best in each set at any time and choose it.</p>" +
                 "<br> <img class='example' src='images/flowers set 1_example/reward_example.png'>",
@@ -140,15 +140,15 @@
                 "<p style='text-align:left'> During the game, an hourglass will occasionally appear on the screen. The hourglass will appear for a few seconds and then will disappear. <br>" +
                 "While the hourglass is on you need to wait.<br>" +
                 "Waiting time can change on each step, and it will <b> range randomly </b> between 0-8 seconds.<br>" +
-                "While you are waiting, you <b> MUST STAY FOCUSED </b> with your gaze and attention on the hourglass on the center of the screen. <br>" +
+                "While you are waiting, you <b> MUST STAY FOCUSED </b> with your gaze and attention on the hourglass in the center of the screen. <br>" +
                 "<p><b>Notice:</b> It is very important for the experiment that you keep your eyes focused on the center of the screen and do not do anything else while waiting.</p>" +
                 "<br> <img class='Hourglass' src='images/hourglass.png''> ",
 
 
                 "<p style='text-align:left'><u>Three important things to remember:</u><br>" +
                 "1.Only the flowers predict an outcome. <b>The response key that was used to select a flower does not influence the chances of winning a coin</b>." +
-                "<br>2. Wating time has nothing to do with winning a coin</b>." +
-                "<br>3. Wating time changes randomly between time to time. which means that <b>there is no flowers that have overall shorter or longer waiting time than others.</b></p>"
+                "<br>2. Waiting time has nothing to do with winning a coin</b>." +
+                "<br>3. Waiting time changes randomly from time to time. which means that <b>there are no flowers that have an overall shorter or longer waiting time than others.</b></p>"
 
                 ],
             show_clickable_nav: true,
@@ -209,14 +209,14 @@
                     required: true
                 },
                 {
-                    prompt: "Some flowerss are better than others.",
+                    prompt: "Some flowers are better than others",
                     name: 'better_cards',
                     correct: 'True',
                     options: Q4_5_6_7_options,
                     required: true
                 },
                 {
-                    prompt: "If the waiting time was long, there is higher probability for winnig a coin",
+                    prompt: "If the waiting time was long, there is a higher probability of winning a coin",
                     name: 'value_change',
                     correct: 'False',
                     options: Q4_5_6_7_options,
@@ -230,7 +230,7 @@
                     required: true
                 },
                 {
-                    prompt: "The outcome you might get is very much dependent on whether you used the RIGHT or LEFT response key.",
+                    prompt: "The outcome you might get is very much dependent on whether you used the RIGHT or LEFT response key",
                     name: 'location_value',
                     correct: 'False, only flowers predict the outcome',
                     options: Q8_options,
@@ -509,7 +509,7 @@
 
         var start_practice_only_cards_block2 = {
             type: 'html-keyboard-response',
-            stimulus: '<div>We will now start a few practice trials with both the cards and the squares. <br> Please be ready with your fingers on <b>"s"</b> and <b>"k"</b> <br><br> <b> Press any key to begin</b></div>',
+            stimulus: '<div>We will now start another few practice trials. <br> Please be ready with your fingers on <b>"s"</b> and <b>"k"</b> <br><br> <b> Press any key to begin</b></div>',
             post_trial_gap: 1000,
             on_finish: function () { document.querySelector('head').insertAdjacentHTML('beforeend', '<style id="cursor-toggle"> html { cursor: none; } </style>') },
         }
@@ -689,7 +689,7 @@
             type: 'html-keyboard-response',
             stimulus: function () {
                 return '<p><b><u>Test block ' + (block + 1) + ' out of ' + (blocks + 1) + '</u></b></p>' +                     
-                    '<p style="text-align: left"> You will now start a test block. Below are the four flowers that can appear in this round.</p>' +
+                    '<p style="text-align: left"> You will now start the first test block out of two. Below are the four flowers that can appear in this round.</p>' +
                     '<p style="text-align: left">Use the LEFT or RIGHT response keys (‘s’ or ‘k’, in correspondence) to make your selection. <br> Please do your best to win as many coins as possible!<br> </p>' +
                     '<p style="text-align: left">Remember that Only the flowers (not the response key that was used to select them or the waiting time) predict an outcome. </p>' +
                     '<p><b>Press SPACE to start</b></p>' +
@@ -700,7 +700,7 @@
             , post_trial_gap: 1000
         }
 
-    
+
         var exp_cards = {
             type: "html-keyboard-response",
             stimulus: function () {
